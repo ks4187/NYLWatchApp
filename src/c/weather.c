@@ -4,8 +4,11 @@ static Window *s_main_window;
 
 static TextLayer *s_temperature_layer;
 static TextLayer *s_city_layer;
+static TextLayer *s_confirm_layer;
 static BitmapLayer *s_icon_layer;
+static BitmapLayer *s_confirm_bitmap_layer;
 static GBitmap *s_icon_bitmap = NULL;
+static GBitmap *s_confirmation_bitmap = NULL;
 
 static AppSync s_sync;
 static uint8_t s_sync_buffer[64];
@@ -73,6 +76,9 @@ static void window_load(Window *window) {
   s_icon_layer = bitmap_layer_create(GRect(0, 10, bounds.size.w, 80));
   layer_add_child(window_layer, bitmap_layer_get_layer(s_icon_layer));
 
+  s_confirm_bitmap_layer = bitmap_layer_create(GRect(0, 10, bounds.size.w, 80));
+
+
   s_temperature_layer = text_layer_create(GRect(0, 90, bounds.size.w, 32));
   text_layer_set_text_color(s_temperature_layer, GColorWhite);
   text_layer_set_background_color(s_temperature_layer, GColorClear);
@@ -87,10 +93,16 @@ static void window_load(Window *window) {
   text_layer_set_text_alignment(s_city_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_city_layer));
 
+  s_confirm_layer = text_layer_create(GRect(0, 90, bounds.size.w, bounds.size.h));
+  text_layer_set_text_color(s_confirm_layer, GColorWhite);
+  text_layer_set_background_color(s_confirm_layer, GColorClear);
+  text_layer_set_font(s_confirm_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  text_layer_set_text_alignment(s_confirm_layer, GTextAlignmentCenter);
+
   Tuplet initial_values[] = {
-    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 1),
-    TupletCString(WEATHER_TEMPERATURE_KEY, "1234\u00B0C"),
-    TupletCString(WEATHER_CITY_KEY, "St Pebblesburg"),
+    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 4),
+    TupletCString(WEATHER_TEMPERATURE_KEY, "NYL PAY"),
+    TupletCString(WEATHER_CITY_KEY, "Loading..."),
   };
 
   app_sync_init(&s_sync, s_sync_buffer, sizeof(s_sync_buffer),
@@ -110,6 +122,34 @@ static void window_unload(Window *window) {
   bitmap_layer_destroy(s_icon_layer);
 }
 
+void select_single_click_handler(ClickRecognizerRef recognizer, void *context) {
+  layer_remove_child_layers(window_get_root_layer(s_main_window));
+
+  Layer *window_layer = window_get_root_layer(s_main_window);
+
+  text_layer_set_text(s_confirm_layer, "PAYMENT CONFIRMED!");
+  layer_add_child(window_layer, text_layer_get_layer(s_confirm_layer));
+
+  s_confirmation_bitmap = gbitmap_create_with_resource(3);
+  bitmap_layer_set_compositing_mode(s_confirm_bitmap_layer, GCompOpSet);
+  bitmap_layer_set_bitmap(s_confirm_bitmap_layer, s_confirmation_bitmap);
+  layer_add_child(window_layer, bitmap_layer_get_layer(s_confirm_bitmap_layer));
+
+  //test_window_load(s_main_window);
+}
+
+void config_provider(Window *window) {
+ // single click / repeat-on-hold config:
+  //window_single_click_subscribe(BUTTON_ID_DOWN, down_single_click_handler);
+  window_single_repeating_click_subscribe(BUTTON_ID_SELECT, 1000, select_single_click_handler);
+
+  // multi click config:
+  //window_multi_click_subscribe(BUTTON_ID_SELECT, 2, 10, 0, true, select_multi_click_handler);
+
+  // long click config:
+  //window_long_click_subscribe(BUTTON_ID_SELECT, 700, select_long_click_handler, select_long_click_release_handler);
+}
+
 static void init(void) {
   s_main_window = window_create();
   window_set_background_color(s_main_window, PBL_IF_COLOR_ELSE(GColorIndigo, GColorBlack));
@@ -119,7 +159,12 @@ static void init(void) {
   });
   window_stack_push(s_main_window, true);
 
+  window_set_click_config_provider(s_main_window, (ClickConfigProvider) config_provider);
+
   app_message_open(64, 64);
+  
+  
+  //test_window_load(s_main_window);
 }
 
 static void deinit(void) {

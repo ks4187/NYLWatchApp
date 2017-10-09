@@ -1,0 +1,47 @@
+# project  configured on Mon Oct  9 17:28:23 2017 by
+# waf 1.7.11 (abi 98, python 2070af0 on darwin)
+# using /Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/waf configure
+#
+----------------------------------------
+Setting top to
+/Users/karanshah/Documents/projects/NYLWatchApp
+----------------------------------------
+Setting out to
+/Users/karanshah/Documents/projects/NYLWatchApp/build
+----------------------------------------
+Checking for program webpack
+/Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/node_modules/.bin/webpack
+find program=['webpack'] paths=['/Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/node_modules/.bin'] var='WEBPACK' -> '/Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/node_modules/.bin/webpack'
+----------------------------------------
+Found Pebble SDK for emery in:
+/Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/emery
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
+----------------------------------------
+Found Pebble SDK for diorite in:
+/Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/diorite
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
+----------------------------------------
+Found Pebble SDK for aplite in:
+/Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
