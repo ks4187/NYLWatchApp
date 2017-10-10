@@ -27,6 +27,8 @@ Discarded input sections
                 0x0000000000000000        0x4 aplite/src/resource_ids.auto.c.26.o
  .data.RESOURCE_ID_IMAGE_RAIN
                 0x0000000000000000        0x4 aplite/src/resource_ids.auto.c.26.o
+ .data.RESOURCE_ID_IMAGE_CONFIRM
+                0x0000000000000000        0x4 aplite/src/resource_ids.auto.c.26.o
  .data.RESOURCE_ID_IMAGE_SUN
                 0x0000000000000000        0x4 aplite/src/resource_ids.auto.c.26.o
  .data.RESOURCE_ID_IMAGE_CLOUD
@@ -1190,7 +1192,7 @@ LOAD /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none
  .note.gnu.build-id
                 0x0000000000000084       0x24 linker stubs
 
-.text           0x00000000000000a8      0x664
+.text           0x00000000000000a8      0x668
  *(.text)
  .text          0x00000000000000a8       0x14 /Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  *(.text.*)
@@ -1326,65 +1328,65 @@ LOAD /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none
                 0x0000000000000690       0x66 src/c/weather.c.26.o
  *fill*         0x00000000000006f6        0x2 
  .rodata.WEATHER_ICONS
-                0x00000000000006f8       0x14 src/c/weather.c.26.o
+                0x00000000000006f8       0x18 src/c/weather.c.26.o
 
-.glue_7         0x000000000000070c        0x0
+.glue_7         0x0000000000000710        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x000000000000070c        0x0
+.glue_7t        0x0000000000000710        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000070c        0x0
+.vfp11_veneer   0x0000000000000710        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x000000000000070c        0x0
+.v4_bx          0x0000000000000710        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x000000000000070c        0x0
+.iplt           0x0000000000000710        0x0
  .iplt          0x0000000000000000        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x000000000000070c        0x0
+.rel.dyn        0x0000000000000710        0x0
  .rel.iplt      0x0000000000000000        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x000000000000070c        0x4
+.data           0x0000000000000710        0x4
  *(.data)
- .data          0x000000000000070c        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x000000000000070c        0x4 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x000000000000070c                __dso_handle
- .data          0x0000000000000710        0x0 src/c/weather.c.26.o
- .data          0x0000000000000710        0x0 aplite/appinfo.auto.c.26.o
- .data          0x0000000000000710        0x0 aplite/src/resource_ids.auto.c.26.o
- .data          0x0000000000000710        0x0 src/message_keys.auto.c.26.o
- .data          0x0000000000000710        0x0 /Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .data          0x0000000000000710        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000000710        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x0000000000000710        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x0000000000000710        0x4 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000000710                __dso_handle
+ .data          0x0000000000000714        0x0 src/c/weather.c.26.o
+ .data          0x0000000000000714        0x0 aplite/appinfo.auto.c.26.o
+ .data          0x0000000000000714        0x0 aplite/src/resource_ids.auto.c.26.o
+ .data          0x0000000000000714        0x0 src/message_keys.auto.c.26.o
+ .data          0x0000000000000714        0x0 /Users/karanshah/Library/Application Support/Pebble SDK/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+ .data          0x0000000000000714        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x0000000000000714        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
 
-.igot.plt       0x0000000000000710        0x0
+.igot.plt       0x0000000000000714        0x0
  .igot.plt      0x0000000000000000        0x0 /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.bss            0x0000000000000710       0x80
+.bss            0x0000000000000714       0x80
  *(.bss)
  *(.bss.*)
  .bss.s_confirm_layer
-                0x0000000000000710        0x4 src/c/weather.c.26.o
- .bss.s_confirmation_bitmap
                 0x0000000000000714        0x4 src/c/weather.c.26.o
+ .bss.s_confirmation_bitmap
+                0x0000000000000718        0x4 src/c/weather.c.26.o
  .bss.s_sync_buffer
-                0x0000000000000718       0x40 src/c/weather.c.26.o
- .bss.s_sync    0x0000000000000758       0x20 src/c/weather.c.26.o
+                0x000000000000071c       0x40 src/c/weather.c.26.o
+ .bss.s_sync    0x000000000000075c       0x20 src/c/weather.c.26.o
  .bss.s_city_layer
-                0x0000000000000778        0x4 src/c/weather.c.26.o
- .bss.s_icon_layer
                 0x000000000000077c        0x4 src/c/weather.c.26.o
- .bss.s_temperature_layer
+ .bss.s_icon_layer
                 0x0000000000000780        0x4 src/c/weather.c.26.o
- .bss.s_confirm_bitmap_layer
+ .bss.s_temperature_layer
                 0x0000000000000784        0x4 src/c/weather.c.26.o
- .bss.s_icon_bitmap
+ .bss.s_confirm_bitmap_layer
                 0x0000000000000788        0x4 src/c/weather.c.26.o
- .bss.s_main_window
+ .bss.s_icon_bitmap
                 0x000000000000078c        0x4 src/c/weather.c.26.o
+ .bss.s_main_window
+                0x0000000000000790        0x4 src/c/weather.c.26.o
 
 DISCARD
  libc.a(*)
@@ -1423,11 +1425,11 @@ OUTPUT(/Users/karanshah/Documents/projects/NYLWatchApp/build/aplite/pebble-app.e
  .comment       0x0000000000000000       0x4f src/message_keys.auto.c.26.o
  .comment       0x0000000000000000       0x4f /usr/local/Cellar/pebble-toolchain/2.0/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x189b
- .debug_info    0x0000000000000000     0x1413 src/c/weather.c.26.o
- .debug_info    0x0000000000001413      0x31a aplite/appinfo.auto.c.26.o
- .debug_info    0x000000000000172d       0xc9 aplite/src/resource_ids.auto.c.26.o
- .debug_info    0x00000000000017f6       0xa5 src/message_keys.auto.c.26.o
+.debug_info     0x0000000000000000     0x18ae
+ .debug_info    0x0000000000000000     0x1414 src/c/weather.c.26.o
+ .debug_info    0x0000000000001414      0x31a aplite/appinfo.auto.c.26.o
+ .debug_info    0x000000000000172e       0xdb aplite/src/resource_ids.auto.c.26.o
+ .debug_info    0x0000000000001809       0xa5 src/message_keys.auto.c.26.o
 
 .debug_abbrev   0x0000000000000000      0x471
  .debug_abbrev  0x0000000000000000      0x34b src/c/weather.c.26.o
@@ -1457,14 +1459,14 @@ OUTPUT(/Users/karanshah/Documents/projects/NYLWatchApp/build/aplite/pebble-app.e
  .debug_line    0x0000000000000363       0xc4 aplite/src/resource_ids.auto.c.26.o
  .debug_line    0x0000000000000427       0xbd src/message_keys.auto.c.26.o
 
-.debug_str      0x0000000000000000      0xdcb
+.debug_str      0x0000000000000000      0xde5
  .debug_str     0x0000000000000000      0xa8d src/c/weather.c.26.o
                                         0xb90 (size before relaxing)
  .debug_str     0x0000000000000a8d      0x236 aplite/appinfo.auto.c.26.o
                                         0x324 (size before relaxing)
- .debug_str     0x0000000000000cc3       0x92 aplite/src/resource_ids.auto.c.26.o
-                                        0x161 (size before relaxing)
- .debug_str     0x0000000000000d55       0x76 src/message_keys.auto.c.26.o
+ .debug_str     0x0000000000000cc3       0xac aplite/src/resource_ids.auto.c.26.o
+                                        0x17b (size before relaxing)
+ .debug_str     0x0000000000000d6f       0x76 src/message_keys.auto.c.26.o
                                         0x145 (size before relaxing)
 
 .debug_frame    0x0000000000000000       0xd8

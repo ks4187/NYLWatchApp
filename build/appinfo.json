@@ -32,6 +32,12 @@
             {
                 "targetPlatforms": null, 
                 "type": "bitmap", 
+                "name": "IMAGE_CONFIRM", 
+                "file": "images/confirm.png"
+            }, 
+            {
+                "targetPlatforms": null, 
+                "type": "bitmap", 
                 "name": "IMAGE_LOGO", 
                 "file": "images/logo.png"
             }, 

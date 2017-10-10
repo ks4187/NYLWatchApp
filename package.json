@@ -15,6 +15,12 @@
         "resources": {
             "media": [
                 {
+                    "file": "images/confirm.png",
+                    "name": "IMAGE_CONFIRM",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/logo.png",
                     "name": "IMAGE_LOGO",
                     "targetPlatforms": null,

@@ -22,9 +22,10 @@ enum WeatherKey {
 static const uint32_t WEATHER_ICONS[] = {
   RESOURCE_ID_IMAGE_SUN, // 0
   RESOURCE_ID_IMAGE_CLOUD, // 1
-  RESOURCE_ID_IMAGE_RAIN, // 2
+  RESOURCE_ID_IMAGE_CONFIRM, // 2
   RESOURCE_ID_IMAGE_SNOW, // 3
-  RESOURCE_ID_IMAGE_LOGO // 4
+  RESOURCE_ID_IMAGE_LOGO, // 4
+  RESOURCE_ID_IMAGE_CONFIRM // 5
 };
 
 static void sync_error_callback(DictionaryResult dict_error, AppMessageResult app_message_error, void *context) {
@@ -130,7 +131,7 @@ void select_single_click_handler(ClickRecognizerRef recognizer, void *context) {
   text_layer_set_text(s_confirm_layer, "PAYMENT CONFIRMED!");
   layer_add_child(window_layer, text_layer_get_layer(s_confirm_layer));
 
-  s_confirmation_bitmap = gbitmap_create_with_resource(3);
+  s_confirmation_bitmap = gbitmap_create_with_resource((uint8_t)1);
   bitmap_layer_set_compositing_mode(s_confirm_bitmap_layer, GCompOpSet);
   bitmap_layer_set_bitmap(s_confirm_bitmap_layer, s_confirmation_bitmap);
   layer_add_child(window_layer, bitmap_layer_get_layer(s_confirm_bitmap_layer));
